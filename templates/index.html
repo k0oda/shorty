@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container d-flex justify-content-center" style="margin-top: 10%;">
+    <div class="col-md-6">
+        <div class="mb-3">
+            <form method="POST" action="{% url 'shorten' %}">
+                {% csrf_token %}
+                <label class="form-label">Shorten your URL</label>
+                {{ form.original_url }}
+                <button class="btn btn-outline-primary mt-3" type="submit">Shorten</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

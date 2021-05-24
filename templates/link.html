@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container" style="margin-top: 10%;">
+    <div class="row">
+        <h2 class="col text-center">Link connections</h2>
+    </div>
+    <div class="row">
+        <table class="col table">
+            <thead>
+                <tr>
+                    <th scope="col">IP</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for connection in connections %}
+                <tr>
+                    <th scope="row">{{ connection.address }}</th>
+                    <td>{{ connection.date }}</td>
+                    <td>{{ connection.time }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}
